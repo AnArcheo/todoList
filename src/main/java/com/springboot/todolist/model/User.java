@@ -9,7 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "user")
+@Table(name = "users") // do not use name 'user' that is the reserved sql keyword
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
