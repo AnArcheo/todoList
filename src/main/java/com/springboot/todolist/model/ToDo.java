@@ -1,16 +1,16 @@
 package com.springboot.todolist.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.time.Instant;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "todo")
 public class ToDo {
     @Id
@@ -18,6 +18,24 @@ public class ToDo {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    private String description;
+    private Status status;
+    private Priority priority;
+    private boolean isCompleted;
+    private Instant createdDate;
+    private Instant modifiedDate;
+    private Instant endDate;
+
+    private String timeLeft;
+
+    @Autowired
+    public ToDo(String description, Status status, Priority priority,
+                boolean isCompleted, Instant createdDate, Instant modifiedDate,
+                Instant endDate, String timeLeft){
+        super();
+        createdDate = Instant.now();
+        modifiedDate = Instant.now();
+    }
 
 
 }
