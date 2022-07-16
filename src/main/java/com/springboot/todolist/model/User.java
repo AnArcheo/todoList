@@ -1,16 +1,14 @@
 package com.springboot.todolist.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "user")
 public class User {
     @Id
@@ -18,6 +16,7 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
-
+    private String username;
+    private String password;
 
 }
