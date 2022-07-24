@@ -40,6 +40,7 @@ public class ToDo {
         super();
         createdDate = Instant.now();
         modifiedDate = Instant.now();
+        isCompleted = false;
     }
 
 }
