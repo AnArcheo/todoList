@@ -21,11 +21,11 @@ public class ToDo {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(length=9)
+    @Column(length=15)
     private Status status;
 
     @Enumerated(EnumType.STRING)
-    @Column(length=12)
+    @Column(length=15)
     private Priority priority;
     @Column
     private boolean isCompleted;

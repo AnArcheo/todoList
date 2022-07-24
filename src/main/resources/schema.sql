@@ -1,13 +1,19 @@
 CREATE TABLE todo
 (
-    id            BIGINT       NOT NULL,
-    description   VARCHAR(255) NOT NULL,
-    status        INT          NOT NULL,
-    priority      INT          NOT NULL,
-    is_completed  BIT(1)       NOT NULL,
-    created_date  datetime     NOT NULL,
-    modified_date datetime     NOT NULL,
-    end_date      datetime     NOT NULL,
-    time_left     VARCHAR(255) NOT NULL,
-    CONSTRAINT pk_todo PRIMARY KEY (id)
+    id            INTEGER AUTO_INCREMENT,
+    description   VARCHAR(255),
+    status        VARCHAR(9),
+    priority      VARCHAR(12),
+    is_completed  BOOLEAN,
+    created_date  TIMESTAMP,
+    modified_date TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE users
+(
+    id       INTEGER AUTO_INCREMENT,
+    username VARCHAR(255),
+    passwords VARCHAR(255),
+
 );
